@@ -2,14 +2,14 @@ const { model, Schema } = require('../connection');
 
 const mySchema = new Schema({
     title: String,
-    adress: { type: String },
-    area: { type: Number },
-    type: { type: String, default: 'unknown' },
+    address: { type: String, default: '' },
+    area: { type: Number, default: 0, required: true },
+    type: { type: String, default: 'unknown', required: true },
     price: { type: Number },
-    image: {},
+    image: { type: String },
     owner: { type: String },
     contact: { type: String },
     createdAt: { type: Date, default: Date.now }
 });
 
-module.exports = model('users', mySchema);
+module.exports = model('properties', mySchema);
